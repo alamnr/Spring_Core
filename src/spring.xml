@@ -5,7 +5,7 @@
 
 <beans>
 	<!--autowire="byName"/"byType"/"constructor"  -->
-	<bean id="triangle" class="org.koushik.javabrains.Triangle" autowire="byName">
+	<bean id="triangle" class="org.koushik.javabrains.Triangle" autowire="byName" scope="prototype">
 		
 		
 	</bean>
