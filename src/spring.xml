@@ -5,8 +5,9 @@
 
 <beans>
 
-<bean id="triangle" class="org.koushik.javabrains.Triangle">
- <property name="type" value="Equilateral"/>
-</bean>
+	<bean id="triangle" class="org.koushik.javabrains.Triangle">
+		<constructor-arg index="0" value="Equilateral" />
+		<constructor-arg index="1" value="20" />
+	</bean>
 
 </beans>
