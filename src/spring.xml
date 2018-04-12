@@ -4,29 +4,23 @@
 ]>
 
 <beans>
-
-	<bean id="triangle" class="org.koushik.javabrains.Triangle">
-		<property name="points">
-		<list>
-			<ref bean="zeroPoint"/>
-			<ref bean="point2"/>
-			<ref bean="point3"/>
-		</list>
-		</property>
+	<!--autowire="byName"/"byType"/"constructor"  -->
+	<bean id="triangle" class="org.koushik.javabrains.Triangle" autowire="byName">
+		
 		
 	</bean>
 	
-	<bean id="zeroPoint" class="org.koushik.javabrains.Point">
+	<bean id="pointA" class="org.koushik.javabrains.Point">
 	  <property name="x" value="0"/>
 	  <property name="y" value="0"/>
 	</bean>
 	
-	<bean id="point2" class="org.koushik.javabrains.Point">
+	<bean id="pointB" class="org.koushik.javabrains.Point">
 	  <property name="x" value="-20"/>
 	  <property name="y" value="0"/>
 	</bean>
 	
-	<bean id="point3" class="org.koushik.javabrains.Point">
+	<bean id="pointC" class="org.koushik.javabrains.Point">
 	  <property name="x" value="20"/>
 	  <property name="y" value="0"/>
 	</bean>
