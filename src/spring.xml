@@ -5,33 +5,30 @@
 
 <beans>
 
-	<bean id="triangle" class="org.koushik.javabrains.Triangle" name="triangle-name">
-		<property name="pointA" ref="zeroPoint" />
-		<!-- <property name="pointA">
-			<idref="zeroPoint" />
-		</property> -->
-		<property name="pointB">
-			<bean class="org.koushik.javabrains.Point">
-				<property name="x" value="-20" />
-				<property name="y" value="0" />
-			</bean>
+	<bean id="triangle" class="org.koushik.javabrains.Triangle">
+		<property name="points">
+		<list>
+			<ref bean="zeroPoint"/>
+			<ref bean="point2"/>
+			<ref bean="point3"/>
+		</list>
 		</property>
-		<property name="pointC">
-			<bean class="org.koushik.javabrains.Point">
-				<property name="x" value="20" />
-				<property name="y" value="0" />
-			</bean>
-		</property>
+		
 	</bean>
-
+	
 	<bean id="zeroPoint" class="org.koushik.javabrains.Point">
-		<property name="x" value="0" />
-		<property name="y" value="0" />
+	  <property name="x" value="0"/>
+	  <property name="y" value="0"/>
 	</bean>
-
-	<alias name="triangle" alias="triangle-alias" />
-
-
-
+	
+	<bean id="point2" class="org.koushik.javabrains.Point">
+	  <property name="x" value="-20"/>
+	  <property name="y" value="0"/>
+	</bean>
+	
+	<bean id="point3" class="org.koushik.javabrains.Point">
+	  <property name="x" value="20"/>
+	  <property name="y" value="0"/>
+	</bean>
 
 </beans>
