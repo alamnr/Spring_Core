@@ -9,7 +9,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Triangle implements InitializingBean , DisposableBean{
+public class Triangle {
 
 	
 	private Point pointA;
@@ -59,27 +59,5 @@ public class Triangle implements InitializingBean , DisposableBean{
 	}
 
 
-	@Override
-	public void afterPropertiesSet() throws Exception {
-		System.out.println("Initializing beans init method called for triangle");
-		
-	}
-
-
-	@Override
-	public void destroy() throws Exception {
-		System.out.println("Disposable Beans destroy method called for triangle");
-		
-	}
-
-	public void myInit(){
-		System.out.println(" beans init method called for triangle");
-		
-	}
-	public void cleanUp(){
-		System.out.println(" Beans destroy  method called for triangle");
-		
-	}
 	
-
 }

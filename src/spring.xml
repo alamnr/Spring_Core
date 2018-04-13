@@ -3,7 +3,7 @@
 <!ENTITY contextInclude SYSTEM "org/springframework/web/portlet/context/WEB-INF/contextInclude.xml">
 ]>
 
-<beans default-init-method="myInit" default-destroy-method="cleanUp">
+<beans >
 	
 	
 	<!-- <bean id="triangle" class="org.koushik.javabrains.Triangle" init-method="myInit" destroy-method="cleanUp" > -->
@@ -32,5 +32,9 @@
 	  <property name="x" value="20"/>
 	  <property name="y" value="0"/>
 	</bean>
+	
+	<bean  class="org.koushik.javabrains.DisplayNameBeanPostProcessor">
+	</bean>
+	
 
 </beans>
