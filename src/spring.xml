@@ -4,9 +4,29 @@
 ]>
 
 <beans>
-	<!--autowire="byName"/"byType"/"constructor"  -->
-	<bean id="triangle" class="org.koushik.javabrains.Triangle" autowire="byName" >
+	
+	<bean id="parentTriangle" class="org.koushik.javabrains.Triangle" abstract="true">
+		<property name="pointA" ref="pointA"/>
+		<property name="points">
+		<list>
+		<ref bean="pointA"/>
+		</list>
+		</property>
+	</bean>
+	<bean id="triangle" class="org.koushik.javabrains.Triangle" parent="parentTriangle" >
+		<property name="pointB" ref="pointB"/>
+		<property name="pointC" ref="pointC"/>
 		
+		<property name="points">
+		<list  merge="true">
+		<ref bean="pointB"/>
+		</list>
+		</property>
+		
+	</bean>
+	
+	<bean id="triangle2" class="org.koushik.javabrains.Triangle" parent="parentTriangle" >
+		<property name="pointB" ref="pointB"/>
 		
 	</bean>
 	

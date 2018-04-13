@@ -16,6 +16,8 @@ public class DrawingApp {
 		Triangle triangle = (Triangle)context.getBean("triangle");
 		triangle.draw();
 		
+		Triangle tr = (Triangle)context.getBean("parentTriangle");
+		
 		
 	}
 
