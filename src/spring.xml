@@ -25,11 +25,11 @@
 		<property name="x" value="0" />
 		<property name="y" value="0" />
 	</bean>
-	<!-- <bean id="center" class="org.koushik.javabrains.Point">
+	 <bean id="center" class="org.koushik.javabrains.Point">
 		
 		<property name="x" value="0" />
 		<property name="y" value="0" />
-	</bean> -->
+	</bean> 
 
 	 <bean id="pointB" class="org.koushik.javabrains.Point">
 		<property name="x" value="-20" />
@@ -42,7 +42,7 @@
 	</bean> 
 	
 	<!-- Instead of defining Bean post processor seperatale use following <context:annotation-config/> -->
-	<context:annotation-config/>
+	 <context:annotation-config/> 
 	
 	<!-- <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
 	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/> -->
