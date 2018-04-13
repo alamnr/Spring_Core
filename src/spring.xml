@@ -3,38 +3,42 @@
 <!ENTITY contextInclude SYSTEM "org/springframework/web/portlet/context/WEB-INF/contextInclude.xml">
 ]>
 
-<beans >
-	
-	
-	<!-- <bean id="triangle" class="org.koushik.javabrains.Triangle" init-method="myInit" destroy-method="cleanUp" > -->
-	<bean id="triangle" class="org.koushik.javabrains.Triangle"  >
-		<property name="pointB" ref="pointB"/>
-		<property name="pointC" ref="pointC"/>
-		<property name="pointA" ref="pointA"/>
-		
-		
-		
+<beans>
+
+
+	<!-- <bean id="triangle" class="org.koushik.javabrains.Triangle" init-method="myInit" 
+		destroy-method="cleanUp" > -->
+	<bean id="triangle" class="org.koushik.javabrains.Triangle">
+		<property name="pointB" ref="pointB" />
+		<property name="pointC" ref="pointC" />
+		<property name="pointA" ref="pointA" />
+
+
+
 	</bean>
-	
-	
-	
+
+
+
 	<bean id="pointA" class="org.koushik.javabrains.Point">
-	  <property name="x" value="0"/>
-	  <property name="y" value="0"/>
+		<!-- Property place holder -->
+		<property name="x" value="${pointA.pointX}" />
+		<property name="y" value="${pointA.pointY}" />
 	</bean>
-	
+
 	<bean id="pointB" class="org.koushik.javabrains.Point">
-	  <property name="x" value="-20"/>
-	  <property name="y" value="0"/>
+		<property name="x" value="-20" />
+		<property name="y" value="0" />
 	</bean>
-	
+
 	<bean id="pointC" class="org.koushik.javabrains.Point">
-	  <property name="x" value="20"/>
-	  <property name="y" value="0"/>
+		<property name="x" value="20" />
+		<property name="y" value="0" />
 	</bean>
+
+	<bean class="org.koushik.javabrains.MyBeanFactoryPP" />
 	
-	<bean  class="org.koushik.javabrains.DisplayNameBeanPostProcessor">
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="pointsConfig.properties" />
 	</bean>
-	
 
 </beans>
