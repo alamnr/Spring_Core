@@ -4,27 +4,21 @@ import java.util.List;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Triangle  {
+public class Triangle implements InitializingBean , DisposableBean{
 
-	private List<Point> points;
+	
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
 
 	
 	
-	public List<Point> getPoints() {
-		return points;
-	}
-
-
-	public void setPoints(List<Point> points) {
-		this.points = points;
-	}
-
+	
 
 	public Point getPointA() {
 		return pointA;
@@ -62,12 +56,30 @@ public class Triangle  {
 		System.out.println("Point B = ( "+getPointB().getX()+", "+getPointB().getY()+" )" );
 		System.out.println("Point C = ( "+getPointC().getX()+", "+getPointC().getY()+" )" );
 		
-		for(Point point : points){
-			System.out.println("Point List = ( "+point.getX()+", "+point.getY()+" )" );
-		}
 	}
 
 
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Initializing beans init method called for triangle");
+		
+	}
+
+
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("Disposable Beans destroy method called for triangle");
+		
+	}
+
+	public void myInit(){
+		System.out.println(" beans init method called for triangle");
+		
+	}
+	public void cleanUp(){
+		System.out.println(" Beans destroy  method called for triangle");
+		
+	}
 	
 
 }

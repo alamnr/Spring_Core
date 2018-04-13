@@ -3,32 +3,20 @@
 <!ENTITY contextInclude SYSTEM "org/springframework/web/portlet/context/WEB-INF/contextInclude.xml">
 ]>
 
-<beans>
+<beans default-init-method="myInit" default-destroy-method="cleanUp">
 	
-	<bean id="parentTriangle" class="org.koushik.javabrains.Triangle" abstract="true">
-		<property name="pointA" ref="pointA"/>
-		<property name="points">
-		<list>
-		<ref bean="pointA"/>
-		</list>
-		</property>
-	</bean>
-	<bean id="triangle" class="org.koushik.javabrains.Triangle" parent="parentTriangle" >
+	
+	<!-- <bean id="triangle" class="org.koushik.javabrains.Triangle" init-method="myInit" destroy-method="cleanUp" > -->
+	<bean id="triangle" class="org.koushik.javabrains.Triangle"  >
 		<property name="pointB" ref="pointB"/>
 		<property name="pointC" ref="pointC"/>
+		<property name="pointA" ref="pointA"/>
 		
-		<property name="points">
-		<list  merge="true">
-		<ref bean="pointB"/>
-		</list>
-		</property>
+		
 		
 	</bean>
 	
-	<bean id="triangle2" class="org.koushik.javabrains.Triangle" parent="parentTriangle" >
-		<property name="pointB" ref="pointB"/>
-		
-	</bean>
+	
 	
 	<bean id="pointA" class="org.koushik.javabrains.Point">
 	  <property name="x" value="0"/>
